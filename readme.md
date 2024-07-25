@@ -21,7 +21,7 @@ This project is a simple web scraping tool with a graphical user interface (GUI)
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/web-scraping-tool.git
+   git clone https://github.com/EshaanManchanda/Web-Scraping-Tool.git
    cd web-scraping-tool
 
 2. Install the required libraries:

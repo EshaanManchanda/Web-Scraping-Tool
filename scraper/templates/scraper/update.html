@@ -1,0 +1,13 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Update Scrape Data</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-4">Update</button>
+    </form>
+    <a href="{% url 'scraper:scrape_history' %}" class="btn btn-secondary mt-4">Cancel</a>
+</div>
+{% endblock %}

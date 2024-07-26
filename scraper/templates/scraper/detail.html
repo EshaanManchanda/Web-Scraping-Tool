@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Scraping Detail</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.title }}</td>
+                <td>{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'scraper:scrape_update' history.pk %}" class="btn btn-warning btn-sm">Edit</a>
+
+    <form action="{% url 'scraper:scrape_delete' history.pk %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+    </form>
+
+    <a href="{% url 'scraper:scrape_history' %}" class="btn btn-primary mt-4">Go Back</a>
+</div>
+{% endblock %}

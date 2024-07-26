@@ -1,0 +1,34 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">Scraping Results</h1>
+    <div id="results">
+        {% if data %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data %}
+                        <tr>
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.price }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <form method="post" action="{% url 'scraper:export_csv' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success mt-4">Export to CSV</button>
+            </form>
+        {% else %}
+            <p>No data found.</p>
+        {% endif %}
+    </div>
+    <a href="{% url 'scraper:index' %}" class="btn btn-primary mt-4">Go Back</a>
+</div>
+{% endblock %}

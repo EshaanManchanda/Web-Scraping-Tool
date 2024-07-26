@@ -2,6 +2,16 @@
 
 This project is a simple web scraping tool with a graphical user interface (GUI) built using Tkinter. It allows users to input a URL and CSS selectors for the data they want to scrape, displays the scraped data, and provides an option to export it to a CSV file.
 
+# Here is the Version 2 of this project( using Django and database )
+
+[Version 2](https://github.com/EshaanManchanda/Web-Scraping-Tool/tree/version-2)
+
+## Home Page
+![Home Page](screenshot/homev2.png)
+
+## History Page
+![History Page](screenshot/historyv2.png)
+
 ## Features
 
 - Input URL and CSS selectors for the data to scrape.
